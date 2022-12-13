@@ -7,7 +7,7 @@ def suffix ():
     return names[random.randint(0, len(names)-1)]
 
 def intro(warrior_1, warrior_2):
-    print("--------------------WELCOME TO THE THUNDERDOME!-------------------- \n\n\n\n\n")
+    print("\n\n\n--------------------WELCOME TO THE THUNDERDOME!-------------------- \n\n\n\n\n")
     print("MEET OUR WARRIORS!")
     time.sleep(2)
 
@@ -22,10 +22,10 @@ def intro(warrior_1, warrior_2):
     time.sleep(2)
 
     if starter == 0:
-        print(f"{warrior_1.name} you have been chosen!")
+        print(f"{warrior_1.name} you have been chosen to start!")
         return [warrior_1, warrior_2]
     else:
-        print(f"{warrior_2.name} you have been chosen!")
+        print(f"{warrior_2.name} you have been chosen to start!")
         return [warrior_2, warrior_1]
 
 
@@ -40,20 +40,25 @@ def fight(warrior_1, warrior_2):
     warrior_1_direction = ""
     warrior_2_direction = ""
 
-    while (warrior_1_move != 'attack' and warrior_1.stamina >= 15) or warrior_1_move != 'block':
+    # while (warrior_1_move == 'attack' and warrior_1.stamina < 15) or warrior_1_move != 'block' or warrior_1_move != 'attack' :
+    while warrior_1_move != 'attack' and warrior_1_move != 'block':
         warrior_1_move = input(f"{warrior_1.name} would you like to attack or block?")
-        if warrior_1_move == "attack":
+
+        while warrior_1.stamina < 15 and warrior_1_move == "attack":
+            warrior_1_move = input(f"{warrior_1.name} would you like to attack or block?")
             print("Your stamina may be too low to execute this move")
 
-    while (warrior_1_move == "attack" and warrior_1_direction == "high" and warrior_1.stamina < 30) or warrior_1_direction != 'high' or warrior_1_direction != 'low':
+    while warrior_1_direction != 'high' or warrior_1_direction != 'low':
         
         warrior_1_direction = input(f"{warrior_1.name} would you like to {warrior_1_move} high or low?")
-        if warrior_1_move == "attack" and warrior_1_direction == "high":
-            print("Your stamina is too low, consider attacking")
+        # if warrior_1_move == "attack" and warrior_1_direction == "high":
+        #     print("Your stamina is too low, consider attacking")
 
-    while (warrior_2_move != 'attack' and warrior_2.stamina >= 15) or warrior_2_move != 'block':
+    while warrior_2_move != 'attack' and warrior_2_move != 'block':
         warrior_2_move = input(f"{warrior_2.name} would you like to attack or block?")
-        if warrior_2_move == "attack":
+
+        while warrior_2.stamina < 15 and warrior_2_move == "attack":
+            warrior_2_move = input(f"{warrior_2.name} would you like to attack or block?")
             print("Your stamina may be too low to execute this move")
 
     while warrior_2_direction != 'high' or warrior_2_direction != 'low':
