@@ -48,7 +48,7 @@ def fight(warrior_1, warrior_2):
             warrior_1_move = input(f"{warrior_1.name} would you like to attack or block? \n:")
             print("Your stamina may be too low to execute this move")
 
-    while warrior_1_direction != 'high' or warrior_1_direction != 'low':
+    while warrior_1_direction != 'high' and warrior_1_direction != 'low':
         
         warrior_1_direction = input(f"{warrior_1.name} would you like to {warrior_1_move} high or low? \n:")
         # if warrior_1_move == "attack" and warrior_1_direction == "high":
@@ -61,7 +61,7 @@ def fight(warrior_1, warrior_2):
             warrior_2_move = input(f"{warrior_2.name} would you like to attack or block? \n:")
             print("Your stamina may be too low to execute this move")
 
-    while warrior_2_direction != 'high' or warrior_2_direction != 'low':
+    while warrior_2_direction != 'high' and warrior_2_direction != 'low':
         # if warrior_2.stamina < 30 and warrior_2_move == "attack":
         #     warrior_2_direction = "low"
         warrior_2_direction = input(f"{warrior_2.name} would you like to {warrior_2_move} high or low?")
@@ -148,8 +148,10 @@ def check_winner(warrior_1, warrior_2):
 
         exit()
     else:
+        time.sleep(2)
         print(f"{warrior_1.name} Health: {warrior_1.health} Stamina: {warrior_1.stamina}")
         print(f"{warrior_2.name} Health: {warrior_2.health} Stamina: {warrior_2.stamina}")
+        time.sleep(2)
 
 
 warrior_1_name = ""
