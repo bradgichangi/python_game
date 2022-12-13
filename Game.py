@@ -8,7 +8,7 @@ def suffix ():
 
 def intro(warrior_1, warrior_2):
     print("\n\n\n--------------------WELCOME TO THE THUNDERDOME!-------------------- \n\n\n\n\n")
-    print("MEET OUR WARRIORS!")
+    print("--------------------MEET OUR WARRIORS!--------------------")
     time.sleep(2)
 
     print((warrior_1.name + " " + suffix()).upper())
@@ -62,8 +62,8 @@ def fight(warrior_1, warrior_2):
             print("Your stamina may be too low to execute this move")
 
     while warrior_2_direction != 'high' or warrior_2_direction != 'low':
-        if warrior_2.stamina < 30 and warrior_2_move == "attack":
-            warrior_2_direction = "low"
+        # if warrior_2.stamina < 30 and warrior_2_move == "attack":
+        #     warrior_2_direction = "low"
         warrior_2_direction = input(f"{warrior_2.name} would you like to {warrior_2_move} high or low?")
 
     if((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'attack' and warrior_2_direction == 'high')):
