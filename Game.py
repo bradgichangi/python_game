@@ -42,23 +42,23 @@ def fight(warrior_1, warrior_2):
 
     # while (warrior_1_move == 'attack' and warrior_1.stamina < 15) or warrior_1_move != 'block' or warrior_1_move != 'attack' :
     while warrior_1_move != 'attack' and warrior_1_move != 'block':
-        warrior_1_move = input(f"{warrior_1.name} would you like to attack or block?")
+        warrior_1_move = input(f"{warrior_1.name} would you like to attack or block? \n:")
 
         while warrior_1.stamina < 15 and warrior_1_move == "attack":
-            warrior_1_move = input(f"{warrior_1.name} would you like to attack or block?")
+            warrior_1_move = input(f"{warrior_1.name} would you like to attack or block? \n:")
             print("Your stamina may be too low to execute this move")
 
     while warrior_1_direction != 'high' or warrior_1_direction != 'low':
         
-        warrior_1_direction = input(f"{warrior_1.name} would you like to {warrior_1_move} high or low?")
+        warrior_1_direction = input(f"{warrior_1.name} would you like to {warrior_1_move} high or low? \n:")
         # if warrior_1_move == "attack" and warrior_1_direction == "high":
         #     print("Your stamina is too low, consider attacking")
 
     while warrior_2_move != 'attack' and warrior_2_move != 'block':
-        warrior_2_move = input(f"{warrior_2.name} would you like to attack or block?")
+        warrior_2_move = input(f"{warrior_2.name} would you like to attack or block? \n:")
 
         while warrior_2.stamina < 15 and warrior_2_move == "attack":
-            warrior_2_move = input(f"{warrior_2.name} would you like to attack or block?")
+            warrior_2_move = input(f"{warrior_2.name} would you like to attack or block? \n:")
             print("Your stamina may be too low to execute this move")
 
     while warrior_2_direction != 'high' or warrior_2_direction != 'low':
@@ -158,16 +158,16 @@ warrior_1_phrase = ""
 warrior_2_phrase = ""
 
 while warrior_1_name == "":
-    warrior_1_name = input("What is your name Warrior 1?")
+    warrior_1_name = input("What is your name Warrior 1? \n:")
 
 while warrior_1_phrase == "":
-    warrior_1_phrase = input("What is your battle cry Warrior 1?")
+    warrior_1_phrase = input("What is your battle cry Warrior 1? \n:")
 
 while warrior_2_name == "":
-    warrior_2_name = input("What is your name Warrior 2?")
+    warrior_2_name = input("What is your name Warrior 2? \n:")
 
 while warrior_2_phrase == "":
-    warrior_2_phrase = input("What is your battle cry Warrior 2?")
+    warrior_2_phrase = input("What is your battle cry Warrior 2? \n:")
 
 warrior_1 = Warrior(warrior_1_name, warrior_1_phrase)
 warrior_2 = Warrior(warrior_2_name, warrior_2_phrase)
