@@ -3,4 +3,4 @@ class Warrior:
         self.name = name
         self.phrase = phrase
         self.health = 100
-        self.stamina = 10
+        self.stamina = 100

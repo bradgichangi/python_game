@@ -8,7 +8,7 @@ def suffix ():
 
 def intro(warrior_1, warrior_2):
     print("\n\n\n--------------------WELCOME TO THE THUNDERDOME!-------------------- \n\n\n\n\n")
-    print("--------------------MEET OUR WARRIORS!--------------------")
+    print("--------------------MEET OUR WARRIORS!--------------------\n\n\n")
     time.sleep(2)
 
     print((warrior_1.name + " " + suffix()).upper())
