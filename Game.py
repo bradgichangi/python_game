@@ -34,6 +34,106 @@ def stamina_increase(warrior):
         print(f"{warrior.name} readies themself and gains 10 stamina!")
         warrior.stamina += 10
 
+# def fight(warrior_1, warrior_2):
+#     warrior_1_move = ""
+#     warrior_2_move = ""
+#     warrior_1_direction = ""
+#     warrior_2_direction = ""
+
+#     # while (warrior_1_move == 'attack' and warrior_1.stamina < 15) or warrior_1_move != 'block' or warrior_1_move != 'attack' :
+#     while warrior_1_move != 'attack' and warrior_1_move != 'block':
+#         warrior_1_move = input(f"{warrior_1.name} would you like to attack or block? \n:")
+
+#         while warrior_1.stamina < 15 and warrior_1_move == "attack":
+#             warrior_1_move = input(f"{warrior_1.name} would you like to attack or block? \n:")
+#             print("Your stamina may be too low to execute this move")
+
+#     while warrior_1_direction != 'high' and warrior_1_direction != 'low':
+        
+#         warrior_1_direction = input(f"{warrior_1.name} would you like to {warrior_1_move} high or low? \n:")
+#         # if warrior_1_move == "attack" and warrior_1_direction == "high":
+#         #     print("Your stamina is too low, consider attacking")
+
+#     while warrior_2_move != 'attack' and warrior_2_move != 'block':
+#         warrior_2_move = input(f"{warrior_2.name} would you like to attack or block? \n:")
+
+#         while warrior_2.stamina < 15 and warrior_2_move == "attack":
+#             warrior_2_move = input(f"{warrior_2.name} would you like to attack or block? \n:")
+#             print("Your stamina may be too low to execute this move")
+
+#     while warrior_2_direction != 'high' and warrior_2_direction != 'low':
+#         # if warrior_2.stamina < 30 and warrior_2_move == "attack":
+#         #     warrior_2_direction = "low"
+#         warrior_2_direction = input(f"{warrior_2.name} would you like to {warrior_2_move} high or low?")
+
+#     if((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'attack' and warrior_2_direction == 'high')):
+#         warrior_1.stamina -= 30
+#         warrior_1.health -= 10
+#         warrior_2.stamina -= 30
+#         warrior_2.health -= 10
+
+#     elif((warrior_1_move == 'attack' and warrior_1_direction == 'low') and (warrior_2_move == 'attack' and warrior_2_direction == 'low')):
+#         warrior_1.stamina -= 15
+#         warrior_1.health -= 5
+#         warrior_2.stamina -= 15
+#         warrior_2.health -= 5
+
+#     elif(warrior_1_move == 'block') and (warrior_2_move == 'block'):
+#         print("Both warriors blocked!")
+    
+#     elif((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'attack' and warrior_2_direction == 'low')):
+#         warrior_1.stamina -= 30
+#         warrior_1.health -= 15
+#         warrior_2.stamina -= 15
+#         warrior_2.health -= 30
+    
+#     elif((warrior_2_move == 'attack' and warrior_2_direction == 'high') and (warrior_1_move == 'attack' and warrior_1_direction == 'low')):
+#         warrior_2.stamina -= 30
+#         warrior_2.health -= 15
+#         warrior_1.stamina -= 15
+#         warrior_1.health -= 30
+    
+#     elif((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'block' and warrior_2_direction == 'high')):
+#         warrior_1.stamina -= 50
+#         warrior_2.stamina += 10 if warrior_2.stamina < 90 else 0
+    
+#     elif((warrior_2_move == 'attack' and warrior_2_direction == 'high') and (warrior_1_move == 'block' and warrior_1_direction == 'high')):
+#         warrior_2.stamina -= 50
+#         warrior_1.stamina += 10 if warrior_1.stamina < 90 else 0
+
+#     elif((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'block' and warrior_2_direction == 'low')):
+#         warrior_1.stamina -= 30
+#         warrior_2.health -= 30
+    
+#     elif((warrior_2_move == 'attack' and warrior_2_direction == 'high') and (warrior_1_move == 'block' and warrior_1_direction == 'low')):
+#         warrior_2.stamina -= 30
+#         warrior_1.health -= 30
+
+#     elif((warrior_1_move == 'attack' and warrior_1_direction == 'low') and (warrior_2_move == 'block' and warrior_2_direction == 'high')):
+#         warrior_1.stamina -= 15
+#         warrior_2.health -= 15
+    
+#     elif((warrior_2_move == 'attack' and warrior_2_direction == 'low') and (warrior_1_move == 'block' and warrior_1_direction == 'high')):
+#         warrior_2.stamina -= 15
+#         warrior_1.health -= 15
+    
+#     elif((warrior_1_move == 'attack' and warrior_1_direction == 'low') and (warrior_2_move == 'block' and warrior_2_direction == 'low')):
+#         warrior_1.stamina -= 15
+#         warrior_2.stamina += 10 if warrior_2.stamina < 90 else 0
+    
+#     elif((warrior_2_move == 'attack' and warrior_2_direction == 'low') and (warrior_1_move == 'block' and warrior_1_direction == 'low')):
+#         warrior_2.stamina -= 15
+#         warrior_1.stamina += 10 if warrior_1.stamina < 90 else 0
+    
+#     print(f"{warrior_1.name} {warrior_1_move}s {warrior_1_direction} and {warrior_2.name} {warrior_2_move}s {warrior_2_direction}")
+
+#     check_winner(warrior_1, warrior_2)
+
+#     stamina_increase(warrior_1)
+#     stamina_increase(warrior_2)
+
+#     return warrior_1, warrior_2
+
 def fight(warrior_1, warrior_2):
     warrior_1_move = ""
     warrior_2_move = ""
@@ -66,75 +166,11 @@ def fight(warrior_1, warrior_2):
         #     warrior_2_direction = "low"
         warrior_2_direction = input(f"{warrior_2.name} would you like to {warrior_2_move} high or low?")
 
-    if((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'attack' and warrior_2_direction == 'high')):
-        warrior_1.stamina -= 30
-        warrior_1.health -= 10
-        warrior_2.stamina -= 30
-        warrior_2.health -= 10
+    if warrior_1_move == 'attack':
+        warrior_1.attack(warrior_1_direction, warrior_2, warrior_2_move, warrior_2_direction)
 
-    elif((warrior_1_move == 'attack' and warrior_1_direction == 'low') and (warrior_2_move == 'attack' and warrior_2_direction == 'low')):
-        warrior_1.stamina -= 15
-        warrior_1.health -= 5
-        warrior_2.stamina -= 15
-        warrior_2.health -= 5
-
-    elif(warrior_1_move == 'block') and (warrior_2_move == 'block'):
-        print("Both warriors blocked!")
-    
-    elif((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'attack' and warrior_2_direction == 'low')):
-        warrior_1.stamina -= 30
-        warrior_1.health -= 15
-        warrior_2.stamina -= 15
-        warrior_2.health -= 30
-    
-    elif((warrior_2_move == 'attack' and warrior_2_direction == 'high') and (warrior_1_move == 'attack' and warrior_1_direction == 'low')):
-        warrior_2.stamina -= 30
-        warrior_2.health -= 15
-        warrior_1.stamina -= 15
-        warrior_1.health -= 30
-    
-    elif((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'block' and warrior_2_direction == 'high')):
-        warrior_1.stamina -= 50
-        warrior_2.stamina += 10 if warrior_2.stamina < 90 else 0
-    
-    elif((warrior_2_move == 'attack' and warrior_2_direction == 'high') and (warrior_1_move == 'block' and warrior_1_direction == 'high')):
-        warrior_2.stamina -= 50
-        warrior_1.stamina += 10 if warrior_1.stamina < 90 else 0
-
-    elif((warrior_1_move == 'attack' and warrior_1_direction == 'high') and (warrior_2_move == 'block' and warrior_2_direction == 'low')):
-        warrior_1.stamina -= 30
-        warrior_2.health -= 30
-    
-    elif((warrior_2_move == 'attack' and warrior_2_direction == 'high') and (warrior_1_move == 'block' and warrior_1_direction == 'low')):
-        warrior_2.stamina -= 30
-        warrior_1.health -= 30
-
-    elif((warrior_1_move == 'attack' and warrior_1_direction == 'low') and (warrior_2_move == 'block' and warrior_2_direction == 'high')):
-        warrior_1.stamina -= 15
-        warrior_2.health -= 15
-    
-    elif((warrior_2_move == 'attack' and warrior_2_direction == 'low') and (warrior_1_move == 'block' and warrior_1_direction == 'high')):
-        warrior_2.stamina -= 15
-        warrior_1.health -= 15
-    
-    elif((warrior_1_move == 'attack' and warrior_1_direction == 'low') and (warrior_2_move == 'block' and warrior_2_direction == 'low')):
-        warrior_1.stamina -= 15
-        warrior_2.stamina += 10 if warrior_2.stamina < 90 else 0
-    
-    elif((warrior_2_move == 'attack' and warrior_2_direction == 'low') and (warrior_1_move == 'block' and warrior_1_direction == 'low')):
-        warrior_2.stamina -= 15
-        warrior_1.stamina += 10 if warrior_1.stamina < 90 else 0
-    
-    print(f"{warrior_1.name} {warrior_1_move}s {warrior_1_direction} and {warrior_2.name} {warrior_2_move}s {warrior_2_direction}")
-
-    check_winner(warrior_1, warrior_2)
-
-    stamina_increase(warrior_1)
-    stamina_increase(warrior_2)
-
-    return warrior_1, warrior_2
-
-    
+    else:
+        warrior_1.block(warrior_1_direction, warrior_2, warrior_2_move, warrior_2_direction)
 
 
 def check_winner(warrior_1, warrior_2):
