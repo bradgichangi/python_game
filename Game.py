@@ -172,6 +172,15 @@ def fight(warrior_1, warrior_2):
     else:
         warrior_1.block(warrior_1_direction, warrior_2, warrior_2_move, warrior_2_direction)
 
+    print(f"{warrior_1.name} {warrior_1_move}s {warrior_1_direction} and {warrior_2.name} {warrior_2_move}s {warrior_2_direction}")
+    time.sleep(2)
+
+    check_winner(warrior_1, warrior_2)
+
+    stamina_increase(warrior_1)
+    stamina_increase(warrior_2)
+
+    return warrior_1, warrior_2
 
 def check_winner(warrior_1, warrior_2):
     if warrior_1.health <= 0:
